@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,18 +16,18 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   openGraph: {
     type: "website",
-    url: "https://breaxotech.com/",
+    url: "https://breax.otech.workers.dev/",
     title: "Breaxo Tech - Your Problem. Our Engineering.",
     description:
       "We find the problem. We engineer the solution. Scalable web platforms, custom AI systems, integrations, ERPs, and cloud architecture.",
-    images: [{ url: "https://breaxotech.com/breaxo-logo.png" }],
+    images: [{ url: "https://breax.otech.workers.dev/breaxo-logo.png" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Breaxo Tech - We find the problem. We engineer the solution.",
     description:
       "An AI-native technology company building scalable web platforms, custom AI systems, integrations, ERPs, and cloud infrastructure.",
-    images: ["https://breaxotech.com/breaxo-logo.png"],
+    images: ["https://breax.otech.workers.dev/breaxo-logo.png"],
   },
 };
 
@@ -55,8 +55,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Breaxo Tech",
-              url: "https://breaxotech.com",
-              logo: "https://breaxotech.com/breaxo-logo.png",
+              url: "https://breax.otech.workers.dev",
+              logo: "https://breax.otech.workers.dev/breaxo-logo.png",
               slogan: "We find the problem. We engineer the solution.",
               description:
                 "An AI-native technology company that builds scalable web platforms, custom AI systems, integrations, ERPs, and cloud infrastructure.",

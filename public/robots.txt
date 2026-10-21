@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://breaxotech.com/sitemap.xml
+Sitemap: https://breax.otech.workers.dev/sitemap.xml
