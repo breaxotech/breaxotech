@@ -1,4 +1,4 @@
-﻿{
+{
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "breax",
   "main": ".open-next/worker.js",
@@ -15,5 +15,8 @@
       "binding": "WORKER_SELF_REFERENCE",
       "service": "breax"
     }
-  ]
+  ],
+  "vars": {
+    "NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY": "559c0b11-28b8-4bef-b488-a0c8113ae9a6"
+  }
 }
