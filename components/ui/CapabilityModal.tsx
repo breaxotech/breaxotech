@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useEffect } from "react";
 import { CloseIcon, ArrowRight, CheckIcon } from "./Icons";
@@ -102,7 +102,7 @@ export function CapabilityModal({ data, onClose }: CapabilityModalProps) {
 
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", paddingTop: "1rem", borderTop: "1px solid var(--border-color)" }}>
             <a
-              href="#connect"
+              href="#contact"
               onClick={onClose}
               className="btn btn-primary"
               style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}

@@ -1,6 +1,6 @@
-﻿"use client";
+"use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 interface NavbarProps {
@@ -9,11 +9,43 @@ interface NavbarProps {
 
 export function Navbar({ activeSection = "hero" }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+
+  // Close on outside click or Escape key
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
+        setMobileOpen(false);
+      }
+    };
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setMobileOpen(false);
+      }
+    };
+
+    if (mobileOpen) {
+      document.addEventListener("mousedown", handleOutsideClick);
+      document.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [mobileOpen]);
 
   return (
-    <header className="dynamic-island-wrapper" id="header">
+    <header className="dynamic-island-wrapper" id="header" ref={headerRef}>
       <div className="dynamic-island">
-        <a href="#hero" className="island-brand" aria-label="Breaxo Tech Home" style={{ display: "flex", alignItems: "center", gap: "0.65rem", textDecoration: "none" }}>
+        <a
+          href="#hero"
+          className="island-brand"
+          aria-label="Breaxo Tech Home"
+          style={{ display: "flex", alignItems: "center", gap: "0.65rem", textDecoration: "none" }}
+          onClick={() => setMobileOpen(false)}
+        >
           <Image
             src="/breaxo-logo.png"
             alt="Breaxo Tech"
@@ -74,15 +106,16 @@ export function Navbar({ activeSection = "hero" }: NavbarProps) {
         </nav>
 
         <div className="island-actions">
-          <a href="#contact" className="btn-black-pill">
+          <a href="#contact" className="btn-black-pill" onClick={() => setMobileOpen(false)}>
             Book a call
           </a>
           <button
             id="mobileMenuBtn"
-            className={`mobile-toggle ${mobileOpen ? "active" : ""}`}
-            aria-label="Toggle navigation menu"
+            className={`mobile-toggle ${mobileOpen ? "open active" : ""}`}
+            aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen(!mobileOpen)}
+            type="button"
           >
             <span className="hamburger-line"></span>
             <span className="hamburger-line"></span>
@@ -93,10 +126,9 @@ export function Navbar({ activeSection = "hero" }: NavbarProps) {
 
       {/* Mobile Floating Glass Drawer */}
       <div
-        className={`mobile-drawer ${mobileOpen ? "active" : ""}`}
+        className={`mobile-drawer ${mobileOpen ? "open active" : ""}`}
         id="mobileDrawer"
         aria-hidden={!mobileOpen}
-        style={{ display: mobileOpen ? "block" : "none" }}
       >
         <ul className="mobile-nav-list">
           <li>
