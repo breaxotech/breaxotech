@@ -1,4 +1,4 @@
-﻿# Breaxo Tech — Enterprise Web Platform
+# Breaxo Tech — Enterprise Web Platform
 
 **Build Smarter. Ship Faster.**
 
@@ -129,6 +129,22 @@ npm run start
 ```
 
 The production server will be available at [http://localhost:3000](http://localhost:3000).
+
+## Environment Variables & Contact Form Security
+
+The contact form is protected by Web3Forms, hCaptcha verification, and a hidden `botcheck` honeypot field.
+
+Create a `.env.local` file for local development or configure environment variables in Cloudflare:
+
+| Variable | Required | Description |
+|---|---|---|
+| `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` | Yes (for live submission) | Public Access Key from [Web3Forms](https://web3forms.com). |
+| `NEXT_PUBLIC_HCAPTCHA_SITEKEY` | Optional | Custom hCaptcha site key. When omitted, Web3Forms's zero-config free hCaptcha is used. |
+
+> **Dashboard Setup:**
+> 1. Log in to the [Web3Forms Dashboard](https://app.webforms.com).
+> 2. Open form settings and activate **hCaptcha** as the CAPTCHA verification provider.
+> 3. Never commit API secret keys or email credentials to repository files.
 
 ## Deployment
 
