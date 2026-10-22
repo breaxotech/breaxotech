@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 
 export function Products() {
   return (
@@ -15,19 +15,6 @@ export function Products() {
               Alongside client work, we build our own software products — AI-powered tools and
               developer utilities born from real engineering problems we've encountered.
             </p>
-            <div className="products-honesty-note glass-subcard">
-              <div className="note-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10" />
-                  <line x1="12" y1="16" x2="12" y2="12" />
-                  <line x1="12" y1="8" x2="12.01" y2="8" />
-                </svg>
-              </div>
-              <p>
-                <strong>Transparency:</strong> These are real projects in active development.
-                No inflated metrics, no fake user counts.
-              </p>
-            </div>
           </div>
 
           <div className="products-domains reveal-stagger">

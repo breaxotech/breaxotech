@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 
 export function Hero() {
   return (
@@ -7,7 +7,7 @@ export function Hero() {
         <div className="hero-content reveal is-revealed">
           <div className="section-kicker">
             <span className="status-live-dot"></span>
-            <span>AI-NATIVE IT &amp; SOFTWARE ENGINEERING</span>
+            <span>AI-NATIVE SOFTWARE BUILDERS &amp; ENGINEERING COMPANY</span>
           </div>
 
           <h1 className="hero-title">
